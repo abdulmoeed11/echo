@@ -1,23 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.mqasoft.echo'
+    namespace 'com.mqasoft.echo.core'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.mqasoft.echo"
         minSdk 28
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -33,24 +28,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
-    implementation project(":core")
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
-    implementation Deps.lifecycle
     implementation Deps.activityCompose
     implementation platform(Deps.composeBom)
     implementation Deps.ui
