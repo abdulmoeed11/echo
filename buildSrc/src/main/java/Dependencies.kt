@@ -6,6 +6,11 @@ object Versions {
     const val compose = "2022.10.00"
     const val junit = "4.13.2"
     const val espresso = "3.5.1"
+    const val androidx = "1.6.0"
+    const val material = "1.10.0"
+    const val daggerHilt = "2.44"
+    const val daggerHiltCompiler = "2.44"
+    const val navigation = "2.7.6"
 }
 
 object Deps{
@@ -24,4 +29,9 @@ object Deps{
     const val uiTestJunit4 = "androidx.compose.ui:ui-test-junit4"
     const val uiTooling = "androidx.compose.ui:ui-tooling"
     const val uiTestManifest = "androidx.compose.ui:ui-test-manifest"
+    const val androidx = "androidx.appcompat:appcompat:${Versions.androidx}"
+    const val material = "com.google.android.material:material:${Versions.material}"
+    const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
+    const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHiltCompiler}"
+    const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
 }
