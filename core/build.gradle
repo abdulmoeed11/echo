@@ -39,6 +39,7 @@ dependencies {
     implementation Deps.uiGraphics
     implementation Deps.uiToolingPreview
     implementation Deps.material3
+    implementation Deps.navigation
     testImplementation Deps.junit
     androidTestImplementation Deps.junitExt
     androidTestImplementation Deps.espressoCore
