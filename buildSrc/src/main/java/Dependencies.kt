@@ -12,6 +12,7 @@ object Versions {
     const val daggerHiltCompiler = "2.44"
     const val navigation = "2.6.0"
     const val voyagerVersion = "1.0.0"
+    const val composeCompilerExtensionVersion = "1.3.2"
 }
 
 object Deps{
