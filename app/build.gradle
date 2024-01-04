@@ -53,6 +53,7 @@ android {
 
 dependencies {
     implementation project(":core")
+    implementation project(":feature:login")
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
     implementation Deps.lifecycle
