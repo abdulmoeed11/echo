@@ -7,10 +7,12 @@ object Versions {
     const val junit = "4.13.2"
     const val espresso = "3.5.1"
     const val androidx = "1.6.0"
-    const val material = "1.10.0"
+    const val material = "1.8.0"
     const val daggerHilt = "2.44"
     const val daggerHiltCompiler = "2.44"
-    const val navigation = "2.7.6"
+    const val navigation = "2.6.0"
+    const val voyagerVersion = "1.0.0"
+    const val composeCompilerExtensionVersion = "1.3.2"
 }
 
 object Deps{
@@ -34,4 +36,7 @@ object Deps{
     const val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
     const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHiltCompiler}"
     const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
+    const val voyagerNavigator = "cafe.adriel.voyager:voyager-navigator:${Versions.voyagerVersion}"
+    const val voyagerHilt = "cafe.adriel.voyager:voyager-hilt:${Versions.voyagerVersion}"
+    const val voyagerTransitions = "cafe.adriel.voyager:voyager-transitions:${Versions.voyagerVersion}"
 }

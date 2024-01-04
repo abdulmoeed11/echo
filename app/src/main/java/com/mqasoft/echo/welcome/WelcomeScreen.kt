@@ -21,12 +21,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.mqasoft.echo.R
+import com.mqasoft.echo.core.navigation.Screen
 import com.mqasoft.echo.core.ui.colors.ForestGreen
 import com.mqasoft.echo.core.R as coreR
 
 @Composable
-fun WelcomeScreen(){
+fun WelcomeScreen(navController: NavController){
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color.DarkGray)
@@ -45,7 +47,7 @@ fun WelcomeScreen(){
             )
             Spacer(modifier = Modifier.weight(1f))
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate(Screen.LoginScreen.route) },
                 modifier = Modifier
                     .fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(ForestGreen)
