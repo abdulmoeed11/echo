@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation project(":core")
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
     implementation Deps.lifecycle
