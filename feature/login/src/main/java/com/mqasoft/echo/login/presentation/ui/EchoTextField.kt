@@ -5,6 +5,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,7 +16,8 @@ import com.mqasoft.echo.core.ui.colors.ForestGreen
 @Composable
 fun EchoTextField(
     value: String,
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
+    hint: String = ""
 ) {
     TextField(
         value = value,
@@ -25,5 +27,8 @@ fun EchoTextField(
             .padding(8.dp)
             .border(BorderStroke(3.dp, ForestGreen))
         ,
+        placeholder = {
+            Text(text = hint)
+        }
     )
 }

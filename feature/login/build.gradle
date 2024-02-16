@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace 'com.mqasoft.echo.login'
-    compileSdk 33
+    compileSdk SDKversion.compileSdk
 
     defaultConfig {
-        minSdk 28
-        targetSdk 33
+        minSdk SDKversion.minSdk
+        targetSdk SDKversion.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
