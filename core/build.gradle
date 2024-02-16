@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace 'com.mqasoft.echo.core'
-    compileSdk 33
+    compileSdk SDKversion.compileSdk
 
     defaultConfig {
-        minSdk 28
-        targetSdk 33
+        minSdk SDKversion.minSdk
+        targetSdk SDKversion.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -29,6 +29,21 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.composeCompilerExtensionVersion
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    kapt {
+        correctErrorTypes true
+    }
 }
 
 dependencies {
@@ -40,6 +55,7 @@ dependencies {
     implementation Deps.uiGraphics
     implementation Deps.uiToolingPreview
     implementation Deps.material3
+    implementation Deps.materialAdaptive
     implementation Deps.navigation
     testImplementation Deps.junit
     androidTestImplementation Deps.junitExt

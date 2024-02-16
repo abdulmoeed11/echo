@@ -3,18 +3,19 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
     namespace 'com.mqasoft.echo'
-    compileSdk 33
+    compileSdk SDKversion.compileSdk
 
     defaultConfig {
         applicationId "com.mqasoft.echo"
-        minSdk 28
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        minSdk SDKversion.minSdk
+        targetSdk SDKversion.targetSdk
+        versionCode SDKversion.versionCode
+        versionName SDKversion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -54,6 +55,10 @@ android {
 dependencies {
     implementation project(":core")
     implementation project(":feature:login")
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.7.2')
+    implementation 'com.google.firebase:firebase-analytics'
+
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
     implementation Deps.lifecycle

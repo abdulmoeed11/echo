@@ -12,7 +12,9 @@ object Versions {
     const val daggerHiltCompiler = "2.44"
     const val navigation = "2.6.0"
     const val voyagerVersion = "1.0.0"
-    const val composeCompilerExtensionVersion = "1.3.2"
+    const val composeCompilerExtensionVersion = "1.5.4"
+    const val material3 = "1.2.0"
+    const val materialAdaptive = "1.0.0"
 }
 
 object Deps{
@@ -39,4 +41,13 @@ object Deps{
     const val voyagerNavigator = "cafe.adriel.voyager:voyager-navigator:${Versions.voyagerVersion}"
     const val voyagerHilt = "cafe.adriel.voyager:voyager-hilt:${Versions.voyagerVersion}"
     const val voyagerTransitions = "cafe.adriel.voyager:voyager-transitions:${Versions.voyagerVersion}"
+    const val materialAdaptive = "androidx.compose.material3:material3-adaptive:${Versions.materialAdaptive}-alpha06"
+}
+
+object SDKversion {
+    const val minSdk = 28
+    const val targetSdk = 34
+    const val compileSdk = 34
+    const val versionCode = 1
+    const val versionName = "1.0"
 }
