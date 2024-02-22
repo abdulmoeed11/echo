@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
 }
 
@@ -56,8 +56,8 @@ dependencies {
     implementation project(":core")
     implementation project(":feature:login")
     //Firebase
-    implementation platform('com.google.firebase:firebase-bom:32.7.2')
-    implementation 'com.google.firebase:firebase-analytics'
+    implementation platform(Deps.firebaseBom)
+    implementation Deps.firebaseAnalytics
 
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
@@ -68,8 +68,13 @@ dependencies {
     implementation Deps.uiGraphics
     implementation Deps.uiToolingPreview
     implementation Deps.material3
+
     implementation Deps.daggerHilt
-    kapt Deps.daggerHiltCompiler
+    kapt Deps.hiltAndroidCompiler
+    kapt Deps.hiltCompiler
+    implementation Deps.hiltNavigationCompose
+    implementation Deps.viewModelCompose
+
     implementation Deps.navigation
     testImplementation Deps.junit
     androidTestImplementation Deps.junitExt

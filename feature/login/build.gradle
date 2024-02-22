@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -56,8 +57,13 @@ dependencies {
     implementation Deps.uiGraphics
     implementation Deps.uiToolingPreview
     implementation Deps.material3
+
     implementation Deps.daggerHilt
-    kapt Deps.daggerHiltCompiler
+    kapt Deps.hiltAndroidCompiler
+    kapt Deps.hiltCompiler
+    implementation Deps.hiltNavigationCompose
+    implementation Deps.viewModelCompose
+
     implementation Deps.navigation
     testImplementation Deps.junit
     androidTestImplementation Deps.junitExt
@@ -66,4 +72,7 @@ dependencies {
     androidTestImplementation Deps.uiTestJunit4
     debugImplementation Deps.uiTooling
     debugImplementation Deps.uiTestManifest
+    implementation platform(Deps.firebaseBom)
+    implementation Deps.firebaseAnalytics
+    implementation Deps.firebaseAuth
 }
