@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.mqasoft.echo.core.R
 
@@ -38,7 +39,7 @@ fun EchoBottomSheet(
             horizontalAlignment = Alignment.CenterHorizontally) {
             Image( modifier = Modifier.size(100.dp),
                 painter = painterResource(id = R.drawable.error_logo), contentDescription = "Logo")
-            Text(errorText)
+            Text(text = errorText, textAlign = TextAlign.Center)
             EchoDButton(text = buttonText,
                 border = Color.Black,
                 buttonColor = Color.Black,
