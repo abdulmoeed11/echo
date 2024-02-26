@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mqasoft.echo.core.ui.colors.ForestGreen
 import com.mqasoft.echo.core.ui.compose.EchoBottomSheet
+import com.mqasoft.echo.core.ui.compose.EchoProgressBar
 import com.mqasoft.echo.login.R
 import com.mqasoft.echo.login.presentation.ui.EchoButton
 import com.mqasoft.echo.login.presentation.ui.EchoTextField
@@ -25,8 +26,8 @@ import com.mqasoft.echo.core.R as coreR
 
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier, loginViewModel: LoginViewModel = hiltViewModel()){
-
     Box(modifier = Modifier.fillMaxSize()){
+        EchoProgressBar(isLoading = loginViewModel.state.value.isLoading)
         loginViewModel.state.value.error.let {error ->
             if (!error.isNullOrEmpty()) {
                 EchoBottomSheet(errorText = error, buttonText = stringResource(id = R.string.ok), onDismissRequest = { loginViewModel.onDismissBottomSheet() })

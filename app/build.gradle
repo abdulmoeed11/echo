@@ -58,6 +58,7 @@ dependencies {
     //Firebase
     implementation platform(Deps.firebaseBom)
     implementation Deps.firebaseAnalytics
+    implementation Deps.firebaseAuth
 
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
