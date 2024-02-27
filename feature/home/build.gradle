@@ -6,16 +6,16 @@ plugins {
 }
 
 android {
-    namespace 'com.mqasoft.echo.login'
+    namespace = "com.mqasoft.echo.home"
     compileSdk SDKversion.compileSdk
 
-    defaultConfig {
-        minSdk SDKversion.minSdk
-        targetSdk SDKversion.targetSdk
+            defaultConfig {
+                minSdk SDKversion.minSdk
+                        targetSdk SDKversion.targetSdk
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-    }
+                        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                consumerProguardFiles "consumer-rules.pro"
+            }
 
     buildTypes {
         release {
@@ -25,7 +25,7 @@ android {
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -48,7 +48,6 @@ android {
 
 dependencies {
     implementation project(":core")
-    implementation project(":feature:home")
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
     implementation Deps.lifecycle
