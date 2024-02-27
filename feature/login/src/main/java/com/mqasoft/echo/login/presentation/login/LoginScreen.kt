@@ -15,6 +15,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import com.mqasoft.echo.core.navigation.Screen
 import com.mqasoft.echo.core.ui.colors.ForestGreen
 import com.mqasoft.echo.core.ui.compose.EchoBottomSheet
 import com.mqasoft.echo.core.ui.compose.EchoProgressBar
@@ -25,13 +27,19 @@ import com.mqasoft.echo.login.presentation.ui.EchoTitle
 import com.mqasoft.echo.core.R as coreR
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier, loginViewModel: LoginViewModel = hiltViewModel()){
+fun LoginScreen(modifier: Modifier = Modifier,
+                navController: NavController,
+                loginViewModel: LoginViewModel = hiltViewModel()){
     Box(modifier = Modifier.fillMaxSize()){
         EchoProgressBar(isLoading = loginViewModel.state.value.isLoading)
         loginViewModel.state.value.error.let {error ->
             if (!error.isNullOrEmpty()) {
                 EchoBottomSheet(errorText = error, buttonText = stringResource(id = R.string.ok), onDismissRequest = { loginViewModel.onDismissBottomSheet() })
             }
+        }
+        if (loginViewModel.nextScreen) {
+            navController.navigate(Screen.HomeScreen.route)
+            loginViewModel.onNavigateToNextScreen()
         }
         Column(
             modifier = Modifier.fillMaxSize(),

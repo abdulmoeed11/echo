@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mqasoft.echo.core.navigation.Screen
+import com.mqasoft.echo.login.navigation.addLoginNestedGraph
 import com.mqasoft.echo.login.presentation.login.LoginScreen
 import com.mqasoft.echo.welcome.WelcomeScreen
 
@@ -16,8 +17,9 @@ fun EchoNavigation(){
             WelcomeScreen(navController)
         }
         composable(route = Screen.LoginScreen.route){
-            LoginScreen()
+            LoginScreen(navController = navController)
         }
+        addLoginNestedGraph(navController)
     }
 
 }
