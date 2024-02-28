@@ -72,7 +72,12 @@ dependencies {
     androidTestImplementation Deps.uiTestJunit4
     debugImplementation Deps.uiTooling
     debugImplementation Deps.uiTestManifest
+
     implementation platform(Deps.firebaseBom)
     implementation Deps.firebaseAnalytics
     implementation Deps.firebaseAuth
+    implementation Deps.firebaseDatabase
+    implementation Deps.firebaseStorage
+
+    implementation Deps.coil
 }
