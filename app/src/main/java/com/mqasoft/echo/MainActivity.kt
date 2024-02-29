@@ -18,17 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             EchoTheme {
-                // A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-//                ) {
-                if (firebaseAuth.currentUser != null){
-
-                }
-                Log.d("CHECK", firebaseAuth.currentUser?.email.toString())
-                    EchoNavigation()
-//                }
+                EchoNavigation(firebaseAuth.currentUser != null)
             }
         }
     }
