@@ -21,13 +21,18 @@ object Versions {
     const val materialAdaptive = "1.0.0"
     const val firebaseBom = "32.7.2"
     const val firebaseAuth = "22.3.1"
+    const val firebaseStorage = "20.3.0"
+    const val firebaseDatabase = "20.3.0"
     const val viewModelCompose = "2.4.1"
-
+    const val coil = "2.6.0"
+    const val room = "2.6.1"
 }
 
 object Deps{
     const val firebaseAuth = "com.google.firebase:firebase-auth-ktx:${Versions.firebaseAuth}"
-    const val firebaseAnalytics = "com.google.firebase:firebase-analytics"
+    const val firebaseAnalytics = "com.google.firebase:firebase-analytics:21.5.1"
+    const val firebaseStorage = "com.google.firebase:firebase-storage-ktx:${Versions.firebaseStorage}"
+    const val firebaseDatabase = "com.google.firebase:firebase-database-ktx:${Versions.firebaseDatabase}"
     const val firebaseBom = "com.google.firebase:firebase-bom:${Versions.firebaseBom}"
     const val core = "androidx.core:core-ktx:${Versions.core}"
     const val kotlinBom = "org.jetbrains.kotlin:kotlin-bom:${Versions.kotlin}"
@@ -58,6 +63,9 @@ object Deps{
     const val voyagerTransitions = "cafe.adriel.voyager:voyager-transitions:${Versions.voyagerVersion}"
     const val materialAdaptive = "androidx.compose.material3:material3-adaptive:${Versions.materialAdaptive}-alpha06"
     const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModelCompose}"
+    const val coil = "io.coil-kt:coil-compose:${Versions.coil}"
+    const val room = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
 }
 
 object SDKversion {
