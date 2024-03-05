@@ -48,7 +48,6 @@ android {
 
 dependencies {
     implementation project(":core")
-    implementation project(":feature:home")
     implementation Deps.core
     implementation platform(Deps.kotlinBom)
     implementation Deps.lifecycle

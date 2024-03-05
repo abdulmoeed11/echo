@@ -19,7 +19,6 @@ class LoginViewModel  @Inject constructor(
     var state = mutableStateOf(LoginState())
     var email by mutableStateOf("")
     var password by mutableStateOf("")
-    var nextScreen by mutableStateOf(false)
 
     fun onEmailChanged(value: String) {
         email = value
@@ -43,7 +42,6 @@ class LoginViewModel  @Inject constructor(
                                 result = respone.data,
                                 isLoading = false
                             )
-                            nextScreen = true
                         }
                         is Resource.Loading ->{
                             state.value = state.value.copy(
@@ -63,12 +61,6 @@ class LoginViewModel  @Inject constructor(
             }
         }
 
-    }
-
-    fun onNavigateToNextScreen(){
-        viewModelScope.launch {
-            nextScreen = false
-        }
     }
 
     fun onDismissBottomSheet(){
