@@ -74,7 +74,4 @@ dependencies {
     implementation Deps.hiltNavigationCompose
     implementation Deps.viewModelCompose
 
-    implementation Deps.room
-    annotationProcessor Deps.roomCompiler
-    kapt Deps.roomCompiler
 }
